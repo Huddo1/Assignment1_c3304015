@@ -1,32 +1,41 @@
-#include <stdio.h>
 
 //Function Prototypes listed here.
 
-int main() {
-    //User interface printed
-    printf("Please select a task to be completed: \n");
-    printf(" a) Encrypt a message with a rotation cipher given the message text and rotation amount. \n");
-    printf(" b) Decrypt a message encrypted with a rotation cipher given the cipher text and rotation amount. \n");
-    printf(" c) Encrypt a message with a substitution cipher given the message text and alphabet substitution. \n");
-    printf(" d) Decrypt a message encrypted with a substitution cipher given the the cipher text and substitutions. \n");
-    printf(" e) Decrypt a message encrypted with a rotation cipher given the cipher text only. \n");
-    printf(" f) Decrypt a message encrypted with a substitution cipher given the cipher text only. \n");
+//Function for task (a)
+/*
+float a_RotEncrypt(float m_str);
+float b_RotDecrypt(float m_str);
+float c_SubEncrypt(float m_str);
+float d_SubDecrypt(float m_str);
+float e_RotDecrypt(float m_str);
+float f_SubDecrypt(float m_str);
+*/
+
+int main(void) {
     
-    char c;
-    scanf("%c", &c);
+    //Necessary variable declaration
+    char ui; //variable for user interface
+    const char *UItext = "Please select a task to complete: ";
     
-    while (c < 'a' || c > 'f') {
-        switch(c) {
-            case 'a': /* function */; break;
-            case 'b': /* function */; break;
-            case 'c': /* function */; break;
-            case 'd': /* function */; break;
-            case 'e': /* function */; break;
-            case 'f': /* function */; break;
-            default: printf("Unknown Option %c\n Please enter a, b, c, d, e, f.\n", c);
+    //FILE opening and writing
+    FILE *inputUI = fopen("intputUI.txt", "w");
+
+    fprintf(inputUI, "%s\n", UItext);
+    
+    
+   /*
+    while (ui < 'a' || ui > 'f') {
+        switch(ui) {
+            case 'a': ... ; break;
+            case 'b': ... ; break;
+            case 'c': ... ; break;
+            case 'd': ... ; break;
+            case 'e': ... ; break;
+            case 'f': ... ; break;
+            default: printf("Unknown Option %c\nPlease enter a, b, c, d, e, f.\n", ui);
         }
-    }
+    */
+    } 
+    fclose(inputUI);
   return 0;
 }
-
-//function definitions listed here.
