@@ -1,0 +1,7 @@
+Please select a task:
+    (a) Encryption of a message with a rotation cipher given the message text and rotation amount.
+    (b) Decryption of a message encrypted with a rotation cipher given the cipher text and rotation amount.
+    (c) Encryption of a message with a substitution cipher given the message text and alphabet substitution.
+    (d) Decryption of a message encrypted with a substitution cipher given the cipher text and substitutions.
+    (e) Decrypt a message encrypted with a rotation cipher given the cipher text only.
+    (f) Decrypt a message encrypted with a substitution cipher given the cipher text only.
