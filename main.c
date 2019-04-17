@@ -1,41 +1,55 @@
-
+#include <stdio.h>
 //Function Prototypes listed here.
+char *a_RotEncrypt(char *message, int key);
 
-//Function for task (a)
-/*
-float a_RotEncrypt(float m_str);
-float b_RotDecrypt(float m_str);
-float c_SubEncrypt(float m_str);
-float d_SubDecrypt(float m_str);
-float e_RotDecrypt(float m_str);
-float f_SubDecrypt(float m_str);
-*/
-
-int main(void) {
+int main() {
+    char message[100] = "ATTACK AT SUNRISE";
+	int key = 1;
+	
+	/*for(i = 0; message[i] != '\0'; ++i){
+		ch = message[i];
+		
+		if(ch >= 'a' && ch <= 'z'){
+			ch = ch + key;
+			if(ch > 'z'){
+				ch = ch - 'z' + 'a' - 1;
+			}
+			message[i] = ch;
+		}
+		else if(ch >= 'A' && ch <= 'Z'){
+			ch = ch + key;
+			
+			if(ch > 'Z'){
+				ch = ch - 'Z' + 'A' - 1;
+			}
+			message[i] = ch;
+		}
+	} */
+	printf("Message: ATTACK AT SUNRISE\n");
+	printf("Encrypted message: %s", a_RotEncrypt(message, key));
     
-    //Necessary variable declaration
-    char ui; //variable for user interface
-    const char *UItext = "Please select a task to complete: ";
-    
-    //FILE opening and writing
-    FILE *inputUI = fopen("intputUI.txt", "w");
-
-    fprintf(inputUI, "%s\n", UItext);
-    
-    
-   /*
-    while (ui < 'a' || ui > 'f') {
-        switch(ui) {
-            case 'a': ... ; break;
-            case 'b': ... ; break;
-            case 'c': ... ; break;
-            case 'd': ... ; break;
-            case 'e': ... ; break;
-            case 'f': ... ; break;
-            default: printf("Unknown Option %c\nPlease enter a, b, c, d, e, f.\n", ui);
-        }
-    */
-    } 
-    fclose(inputUI);
   return 0;
+}
+
+char *a_RotEncrypt(char *message, int key){
+    char letter;
+    int i;
+    for(i = 0; message[i] != '\0'; ++i){
+        letter = message[i];
+        if(letter >= 'a' && letter <= 'z'){
+            letter = letter + key;
+            if (letter > 'z'){
+                letter = letter - 'z' + 'a' - 1;
+            }
+            message [i] = letter;
+        }
+        else if(letter >= 'A' && letter <= 'Z'){
+            letter = letter + key;
+            if(letter > 'Z'){
+                letter = letter - 'Z' + 'A' - 1;
+            }
+            message[i] = letter;
+        }
+    }
+    return message;
 }
