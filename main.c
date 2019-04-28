@@ -20,6 +20,7 @@ int main() {
 	//USER INTERFACE
 	FILE *output = fopen("output.txt", "w");
 	FILE *input = fopen("input.txt", "r");
+	
 	fscanf(input, "%d\n", &ui);
 	fscanf(input, "%[^\n]s", message);
 	fscanf(input, "%d\n", &Rotkey);
@@ -29,14 +30,18 @@ int main() {
         case 1 : 
             printf("Rotation Encryption Selected.\n");
             printf("Message: %s\n", message);
+            printf("Rotation Key = %d\n", Rotkey);
             fprintf(output, "Message: %s\n", message);
+            fprintf(output, "Rotation Key = %d\n", Rotkey);
             printf("Encrypted Message: %s\n", RotEncrypt(message, Rotkey));
             fprintf(output, "Encrypted Message: %s\n", message);
             break;
         case 2 :
             printf("Rotation Decryption Selected.\n");
             printf("Encrypted Message: %s\n", message);
+            printf("Rotation Key = %d\n", Rotkey);
             fprintf(output, "Encrypted Message: %s\n", message);
+            fprintf(output, "Rotation Key = %d\n", Rotkey);
             printf("Decrypted Message: %s\n", RotDecrypt(message, Rotkey));
             fprintf(output, "Decrypted Message: %s\n", message);
             break;
